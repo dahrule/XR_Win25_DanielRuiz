@@ -1,0 +1,5 @@
+C:/Users/s0532045/XR_Win25_DanielRuiz/.utmp/RelWithDebInfo/ur6p2t5k/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/s0532045/XR_Win25_DanielRuiz/.utmp/RelWithDebInfo/ur6p2t5k/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/s0532045/XR_Win25_DanielRuiz/.utmp/RelWithDebInfo/ur6p2t5k/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Users/s0532045/XR_Win25_DanielRuiz/.utmp/RelWithDebInfo/ur6p2t5k/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Users/s0532045/XR_Win25_DanielRuiz/.utmp/RelWithDebInfo/ur6p2t5k/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
