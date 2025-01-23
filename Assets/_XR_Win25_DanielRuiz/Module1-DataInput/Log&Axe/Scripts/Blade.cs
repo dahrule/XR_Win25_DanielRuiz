@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -11,8 +10,6 @@ public class Blade : MonoBehaviour
     public XRGrabInteractable m_grabInteractable;
     public ControllerDataReader m_controllerDataReader;
     XRBaseInteractor m_interactor;
-
-
     
     void Awake()
     {
@@ -42,6 +39,8 @@ public class Blade : MonoBehaviour
         //Set the ControllerDataReader
         m_controllerDataReader=m_interactor.gameObject.GetComponentInParent<ControllerDataReader>();
 
+        EnablePhysics();
+
     }
 
     private void OnDisable()
@@ -51,5 +50,22 @@ public class Blade : MonoBehaviour
 
         m_grabInteractable.selectEntered.RemoveListener(OnSelectEnter);
         m_grabInteractable.selectExited.RemoveListener(ResetControllerDataReader);
+    }
+
+    public void Drop()
+    {
+        IXRSelectInteractable grabinteractable = m_grabInteractable;
+        m_interactor.interactionManager.CancelInteractableSelection(grabinteractable);
+    }
+
+    public void DisablePhysics()
+    {
+       Rigidbody rigigBody = GetComponent<Rigidbody>();
+       rigigBody.constraints = RigidbodyConstraints.FreezeAll;
+    }
+   private void EnablePhysics()
+    {
+        Rigidbody rigigBody = GetComponent<Rigidbody>();
+        rigigBody.constraints = RigidbodyConstraints.None;
     }
 }
