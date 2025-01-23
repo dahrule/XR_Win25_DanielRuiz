@@ -14,12 +14,10 @@ public class ControllerDataReader : MonoBehaviour
     public Vector3 Velocity { get; private set; } = Vector3.zero;
 
 
-  
-
-    // Update is called once per frame
+ 
     void Update()
     {
         Velocity = velocityProperty.action.ReadValue<Vector3>();
-        Debug.Log("Velocity: " + Velocity);
+        //Debug.Log("Velocity: " + Velocity);
     }
 }

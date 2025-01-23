@@ -7494,7 +7494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocityProperty:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Velocity Property
       m_Type: 0
@@ -7502,9 +7502,17 @@ MonoBehaviour:
       m_Id: 26fa3be5-029f-441c-9525-e3fabcf5e969
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings: []
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 5a3c8379-b9fa-4bc6-bf94-525dd80b3c8e
+        m_Path: <XRController>{RightHand}/{DeviceVelocity}
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Velocity Property
+        m_Flags: 0
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: -510389403414102139, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!4 &941582946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3283785463155816736, guid: e912fbd5396dace4dbdffbc8b79a6c14, type: 3}
@@ -14833,6 +14841,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Log
       objectReference: {fileID: 0}
+    - target: {fileID: 1130278646489834990, guid: 386f51078eb194e49991919fffce410f, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570917286397869716, guid: 386f51078eb194e49991919fffce410f, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3182758340362951222, guid: 386f51078eb194e49991919fffce410f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.81918085
@@ -14885,6 +14901,14 @@ PrefabInstance:
       propertyPath: logTwo
       value: 
       objectReference: {fileID: 1022785329}
+    - target: {fileID: 8802265522563019726, guid: 386f51078eb194e49991919fffce410f, type: 3}
+      propertyPath: m_splitThreshold
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802265522563019726, guid: 386f51078eb194e49991919fffce410f, type: 3}
+      propertyPath: m_stickThreshold
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

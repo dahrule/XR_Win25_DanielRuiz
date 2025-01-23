@@ -3357,6 +3357,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "RightControllerVelocity",
+                    "type": "Value",
+                    "id": "0c7c2d35-9dc0-475a-8275-cd5e2a667715",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -3368,6 +3377,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "LeftControllerVelocity",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e7af4c51-5d9d-4fb3-b3bb-614d8b30c862",
+                    "path": "<OculusTouchController>{RightHand}/devicePose/velocity",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightControllerVelocity",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

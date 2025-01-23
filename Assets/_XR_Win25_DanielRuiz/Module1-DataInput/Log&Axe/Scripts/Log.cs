@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 /// <summary>
 /// The log script purpose is to check wether its being hit by a blade and react accordingly.
@@ -12,11 +11,11 @@ public class Log : MonoBehaviour
     [SerializeField] GameObject logOne;
     [SerializeField] GameObject logTwo;
 
-    Collider m_collider = null;
-    [SerializeField] float m_splitThreshold=6f;
-    [SerializeField] float m_stickThreshold=4f;
+    [SerializeField] float m_splitThreshold=2f;
+    [SerializeField] float m_stickThreshold=1f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    Collider m_collider = null;
+
     void Awake()
     {
         m_collider = GetComponent<Collider>();
@@ -35,6 +34,7 @@ public class Log : MonoBehaviour
         if (blade==null) 
             return; //Quit this fucntion earlier if not blade script is found;
 
+        
         if (blade.m_controllerDataReader == null)
             return;
 
@@ -44,13 +44,13 @@ public class Log : MonoBehaviour
 
     private void Split(Blade blade)
     {
-
         //Split Log
-        float bladeHitSpeed=blade.m_controllerDataReader.Velocity.magnitude; 
-        if(bladeHitSpeed>m_splitThreshold)
+        float bladeHitSpeed = blade.m_controllerDataReader.Velocity.magnitude;
+        
+        if (bladeHitSpeed > m_splitThreshold)
         {
-            //Disable collision so we can only split once
-            m_collider.enabled = false;
+            
+            m_collider.enabled = false;//Disable collision so we can only split once
 
             EnablePhysics(logOne);
             EnablePhysics(logTwo);
@@ -61,10 +61,10 @@ public class Log : MonoBehaviour
         {
             blade.Drop();
             blade.DisablePhysics();
-
         }
+    }
 
-    void EnablePhysics(GameObject log)
+     void EnablePhysics(GameObject log)
     {
         log.transform.parent = null;
 
@@ -74,4 +74,4 @@ public class Log : MonoBehaviour
     }
         
 }
-}
+
