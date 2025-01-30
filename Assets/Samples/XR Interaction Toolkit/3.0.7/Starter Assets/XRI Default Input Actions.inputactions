@@ -3344,6 +3344,54 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "ControllerData",
+            "id": "e21c3bb2-d405-4779-a1db-6454e68e46a4",
+            "actions": [
+                {
+                    "name": "LeftControllerVelocity",
+                    "type": "Value",
+                    "id": "16fb0bf9-06ce-47b1-a636-7563a27f2704",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RightControllerVelocity",
+                    "type": "Value",
+                    "id": "0c7c2d35-9dc0-475a-8275-cd5e2a667715",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "12aa9ba2-21d6-4ec5-8a7e-6074b1ad0b47",
+                    "path": "<OculusTouchController>{LeftHand}/devicePose/velocity",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftControllerVelocity",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e7af4c51-5d9d-4fb3-b3bb-614d8b30c862",
+                    "path": "<OculusTouchController>{RightHand}/devicePose/velocity",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightControllerVelocity",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
