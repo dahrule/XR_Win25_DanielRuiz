@@ -56,6 +56,15 @@ using UnityEngine;
                 doorSlideCoroutine = null;
             }
         }
+
+    private void Update()
+    {
+        if (StoneSocket.numberOfStonesPlaced == 3)
+        {
+            Open();
+        }
+        
     }
+}
 
 

@@ -9,10 +9,7 @@ public class StoneSocket : MonoBehaviour
     [SerializeField] string stoneTag;
      bool isOccupied = false;
 
-    static int numberOfStonesPlaced = 0;
-
-    [SerializeField] SlidingDoor slidingDoor;
-    [SerializeField] AudioSource audioSource;
+    public static int numberOfStonesPlaced = 0;
 
 
     private void OnTriggerEnter(Collider other)
@@ -27,11 +24,6 @@ public class StoneSocket : MonoBehaviour
             Debug.Log($"{other.gameObject.name} gameobject entered the trigger");
         }
 
-        if(numberOfStonesPlaced==3)
-        {
-            slidingDoor.Open();
-            audioSource.Play();
-        }
 
     }
 
