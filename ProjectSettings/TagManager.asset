@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - Firestone
+  - Waterstone
+  - Foreststone
   layers:
   - Default
   - TransparentFX

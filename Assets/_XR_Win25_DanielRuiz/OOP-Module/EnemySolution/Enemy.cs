@@ -16,7 +16,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected bool IsWithinAttackRange => Vector3.Distance(transform.position, m_playerTarget.position) < m_attackRange;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         if (m_playerTarget == null) m_playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
     }
