@@ -9,11 +9,38 @@ using UnityEngine;
         [SerializeField] private AnimationCurve curve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 
         [Tooltip ("Slide movement duration in seconds")]
-        [SerializeField] private float slideDuration = 5.0f; 
+        [SerializeField] private float slideDuration = 5.0f;
 
+       /* [SerializeField] StoneSocket fireStoneSocket;
+        [SerializeField] StoneSocket waterStoneSocket;
+        [SerializeField] StoneSocket forestStoneSocket;*/
+    
         private Coroutine doorSlideCoroutine;
 
-        void Start()
+    private void OnEnable()
+    {
+        //Subscribing to events
+        StoneSocket.OnAllStonesPlaced += HandleStones;
+        /*waterStoneSocket.OnAllStonesPlaced += Open;
+        forestStoneSocket.OnAllStonesPlaced += Open;*/
+
+    }
+
+    private void OnDisable()
+    {
+        //UnSubscribing to events
+        StoneSocket.OnAllStonesPlaced -= HandleStones;
+       /* waterStoneSocket.OnAllStonesPlaced -= Open;
+        forestStoneSocket.OnAllStonesPlaced -= Open;*/
+
+    }
+
+    private void HandleStones(StoneSocket socket, float inValu)
+    {
+        Debug.Log("Object that triggered the event is: " + socket.gameObject.name);
+        Open();
+    }
+    void Start()
         {
             Close();
         }
@@ -35,10 +62,11 @@ using UnityEngine;
         }
 
         [ContextMenu("Open")] // This allows running the function from the Editor to test it (dotStack Menu next to Component Name). Only works for functions with no parameters.
-        public void Open()
+        private void Open()
         {
             StopDoorSlideCoroutine(); // Stop any existing coroutine to avoid conflicts
             doorSlideCoroutine = StartCoroutine(SlideDoor(openDooraPosition.position));
+            
         }
 
         [ContextMenu("Close")] 
@@ -56,15 +84,6 @@ using UnityEngine;
                 doorSlideCoroutine = null;
             }
         }
-
-    private void Update()
-    {
-        if (StoneSocket.numberOfStonesPlaced == 3)
-        {
-            Open();
-        }
-        
-    }
 }
 
 
